@@ -453,10 +453,11 @@ class FFmpegMetadataPP(FFmpegPostProcessor):
         add('purl', 'webpage_url')
         add('track', 'track_number')
         add('artist', ('artist', 'creator', 'uploader', 'uploader_id'))
-        add('genre')
+        add('genre', ('explicitGenre'))
         add('album', 'artist')
         add('album_artist')
         add('disc', 'disc_number')
+
 
         if not metadata:
             self._downloader.to_screen('[ffmpeg] There isn\'t any metadata to add')

@@ -213,6 +213,8 @@ def _real_main(argv=None):
     if opts.convertsubtitles is not None:
         if opts.convertsubtitles not in ['srt', 'vtt', 'ass', 'lrc']:
             parser.error('invalid subtitle format specified')
+    if opts.explicitGenre is not None:
+        print('Genre is {}'.format(opts.explicitGenre))
 
     if opts.date is not None:
         date = DateRange.day(opts.date)
@@ -434,6 +436,7 @@ def _real_main(argv=None):
         # just for deprecation check
         'autonumber': opts.autonumber if opts.autonumber is True else None,
         'usetitle': opts.usetitle if opts.usetitle is True else None,
+        'explicitGenre': opts.explicitGenre
     }
 
     with YoutubeDL(ydl_opts) as ydl:

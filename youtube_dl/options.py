@@ -858,6 +858,10 @@ def parseOpts(overrideArguments=None):
         '--convert-subs', '--convert-subtitles',
         metavar='FORMAT', dest='convertsubtitles', default=None,
         help='Convert the subtitles to other format (currently supported: srt|ass|vtt|lrc)')
+    postproc.add_option(
+        '--explicit-genre',
+        dest='explicitGenre', default='English',
+        help='Place the genre here to apply by ffmpeg')
 
     parser.add_option_group(general)
     parser.add_option_group(network)
